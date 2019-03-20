@@ -19,7 +19,7 @@ module.exports.processCSV = async (event, context) => {
     const csvString = response.Body.toString()
 
     /*
-     ** Perform transformations here
+     * Perform transformations here
      */
 
     // Save the flat file to the are bucket
