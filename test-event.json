@@ -1,0 +1,14 @@
+{
+  "Records": [
+    {
+      "s3": {
+        "bucket": {
+          "name": "input-csv-inuargnfiaughjkdsgnksjdb"
+        },
+        "object": {
+          "key": "test.csv"
+        }
+      }
+    }
+  ]
+}
