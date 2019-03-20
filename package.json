@@ -1,7 +1,7 @@
 {
   "name": "serverless-lambda-s3",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project demonstrates how the Serverless Framework can be used to deploy a NodeJS Lambda function that responds to events in an S3 bucket.",
   "main": "handler.js",
   "scripts": {
     "format": "prettier --write '**/**.{js,json,css,md}'",
