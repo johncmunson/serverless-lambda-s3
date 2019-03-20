@@ -1,4 +1,4 @@
-service: csv-serverless-lambda
+service: serverless-lambda-s3
 
 provider:
   name: aws
@@ -16,17 +16,17 @@ functions:
     handler: handler.processCSV
     events:
       - s3:
-          bucket: input-csv-inuargnfiaughjkdsgnksjdb
+          bucket: CSV-BUCKET-NAME-CHANGE-ME
           event: s3:ObjectCreated:*
           rules:
             - suffix: .csv
     environment:
-      ARE_BUCKET: ${self:resources.Resources.are.Properties.BucketName}
+      FIXED_WIDTH_BUCKET: ${self:resources.Resources.fixedwidth.Properties.BucketName}
       NODE_ENV: production
 
 resources:
   Resources:
-    are:
+    fixedwidth:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: output-are-nuvifshgfakdfjakdfkacvbf
+        BucketName: FIXED-WIDTH-BUCKET-NAME-CHANGE-ME

@@ -1,5 +1,5 @@
 {
-  "name": "csv-serverless-lambda",
+  "name": "serverless-lambda-s3",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
@@ -7,10 +7,23 @@
     "format": "prettier --write '**/**.{js,json,css,md}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "serverless",
+    "framework",
+    "aws",
+    "lambda",
+    "node",
+    "s3",
+    "csv",
+    "fixed",
+    "flat"
+  ],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "fixy": "^1.2.0",
+    "papaparse": "^4.6.3"
+  },
   "devDependencies": {
     "aws-sdk": "^2.424.0",
     "dotenv": "^7.0.0",
