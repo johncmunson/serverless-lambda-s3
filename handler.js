@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const util = require('util')
 const AWS = require('aws-sdk')
@@ -12,13 +12,21 @@ module.exports.processCSV = async (event, context) => {
   const areKey = csvKey.replace('.csv', '.are')
 
   try {
-    const response = await s3.getObject({ Bucket: csvBucket, Key: csvKey }).promise()
+    // Load the csv file from the csv bucket
+    const response = await s3
+      .getObject({ Bucket: csvBucket, Key: csvKey })
+      .promise() // unconventional and specific to aws-sdk
     const csvString = response.Body.toString()
 
-    // perform transformations here
+    /*
+     ** Perform transformations here
+     */
 
-    await s3.putObject({ Bucket: areBucket, Key: areKey, Body: csvString }).promise()
-  } catch(error) {
+    // Save the flat file to the are bucket
+    await s3
+      .putObject({ Bucket: areBucket, Key: areKey, Body: csvString })
+      .promise() // unconventional and specific to aws-sdk
+  } catch (error) {
     console.error(error)
   }
 }

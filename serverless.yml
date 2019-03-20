@@ -3,7 +3,7 @@ service: csv-serverless-lambda
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: ${opt:stage, 'dev'} # serverless deploy -v --stage production
+  stage: production
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -22,7 +22,7 @@ functions:
             - suffix: .csv
     environment:
       ARE_BUCKET: ${self:resources.Resources.are.Properties.BucketName}
-      NODE_ENV: ${opt:stage, 'dev'}
+      NODE_ENV: production
 
 resources:
   Resources:
